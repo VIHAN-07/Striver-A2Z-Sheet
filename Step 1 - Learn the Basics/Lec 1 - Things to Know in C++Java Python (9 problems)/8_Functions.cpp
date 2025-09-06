@@ -42,15 +42,16 @@ int multiply(int a, int b) {
 }
 
 bool isPrime(int n) {
-    if(n <= 1) return false;
-    if(n <= 3) return true;
-    if(n % 2 == 0 || n % 3 == 0) return false;
+    // Numbers less than 2 are not prime
+    if(n < 2) return false;
     
-    for(int i = 5; i * i <= n; i += 6) {
-        if(n % i == 0 || n % (i + 2) == 0)
-            return false;
+    // Check if any number from 2 to sqrt(n) divides n
+    for(int i = 2; i * i <= n; i++) {
+        if(n % i == 0) {
+            return false;  // Found a divisor, not prime
+        }
     }
-    return true;
+    return true;  // No divisors found, it's prime
 }
 
 void printPattern(int n) {
