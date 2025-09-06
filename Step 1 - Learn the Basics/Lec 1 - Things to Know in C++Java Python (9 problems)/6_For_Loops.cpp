@@ -25,13 +25,22 @@ int main() {
     }
     cout << endl;
     
-    // Nested for loop - multiplication table
+    // Single for loop - multiplication table
     int num;
     cout << "Enter a number for multiplication table: ";
     cin >> num;
     
     for(int i = 1; i <= 10; i++) {
         cout << num << " x " << i << " = " << num * i << endl;
+    }
+    
+    // Actual nested for loop example - printing a pattern
+    cout << "\nNested for loop - Star pattern:" << endl;
+    for(int i = 1; i <= 5; i++) {        // Outer loop
+        for(int j = 1; j <= i; j++) {    // Inner loop (nested)
+            cout << "* ";
+        }
+        cout << endl;
     }
     
     return 0;
